@@ -1,12 +1,14 @@
 # Business processes
 
+_Take me back to the [home](../README.md#learning-outcomes) page!_
+
 ## Description
 
-**Learning outcome:**
+### Learning outcome
 
 > You analyze and describe simple business processes that are related to your project.
 
-### Clarification:
+### Clarification
 
 _Simple:_ Involving stakeholders, predominantly sequential processes with one or two alternative paths.
 
@@ -17,5 +19,7 @@ _Related:_
 or
 
 - Business processes needed for the success of your software development project (e.g., product release, market release, financial assurance).
+
+## Implementation
 
 ## Relevant questions
