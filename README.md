@@ -53,8 +53,8 @@ This document serves as the guide through semester 3 demand-based software. Here
 | Business processes    | <div style="color:Cyan">Beginning</div>                                                       | _Simple_ : We've had points where we needed to make a choice where either had a (near-) equal amount of pros and cons. Here we allowed our stakeholder to decide how to continue forward.<br><br>_Related_ : We've created a flow diagram and C4 visualization with regard to complex system/components/algorithms.                                                                                                                                                                      |
 | Professional          | <div style="color:cyan"> Beginning </div>                                                     | _Professional manner_ : We actively communicate and work together in both the individual and group project. Here we advise the stakeholders on their choices & inform them about our choices. We create solutions for encountered problems.                                                                                                                                                                                                                                              |
 
- <div style="color:Crimson">Undefined</div> 
- <div style="color:DarkOrange">Orienting</div> 
- <div style="color:Cyan">Beginning</div> 
- <div style="color:MediumSpringGreen">Proficient</div> 
+ <div style="color:Crimson">Undefined</div>
+ <div style="color:DarkOrange">Orienting</div>
+ <div style="color:Cyan">Beginning</div>
+ <div style="color:MediumSpringGreen">Proficient</div>
 <div style="color:Violet">Advanced</div>
