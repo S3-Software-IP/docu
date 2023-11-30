@@ -1,10 +1,10 @@
 # How can we enhance the security of accounts sharing data using the Spotify WebAPI?
 
-_By J.A Brugman & Morris Hannessen_
+Researched and documented by J.A Brugman and Morris Hannessen
 
 ## Table of contents
 
-- [How can we enhance the security of accounts sharing data using the Spotify WebAPI?](#how-can-we-enhance-the-security-of-accounts-sharing-data-using-the-spotify-webapi)
+- [How can we enhance the security of accounts sharing data using the Spotify WebAPI?](#how-can-we-enhance-the-security-of-accounts-sharing-data-using-the-spotify-webapi) - [By J.A Brugman \& Morris Hannessen](#by-ja-brugman--morris-hannessen)
   - [Table of contents](#table-of-contents)
   - [Introduction](#introduction)
   - [What do user accounts encompass?](#what-do-user-accounts-encompass)
