@@ -107,8 +107,8 @@ The OAuth 2.0 authorization framework comes with it's risks. Some of the more co
 Redirection interception is an issue that arises in OAuth by creating a fake representation of the scopes/login external page. Simply intercept the endpoint and redirect the user to a 'fake' auth grant, this leads a user who is not paying attention filling in their username and/or password, thus stealing their data. To prevent this you want to ensure that the URL is the one which you expected to enter your code into, in this scenario that means 'www.spotify.com'.
 
 <div>
-  <img src="../static/img/2023-12-20%2016_23_14-Login%20-%20Spotify.png" alt="Spotify login screen"/>
-  <img src="../static/img/2023-12-20%2016_24_30-Authorize%20-%20Spotify.png" alt="Spotify scopes screen"/>
+  <img src="../static/img/loginSpotify.png" alt="Spotify login screen"/>
+  <img src="../static/img/authorizeSpotify.png" alt="Spotify scopes screen"/>
 </div>
 
 _The login/scope screen when going through the Spotify authorization flow_
@@ -285,7 +285,7 @@ setAccessRefreshToken: async (requestBody) => {
 
 Implementing this code in a NextJS web-application and creating an index and callback screen it is then possible to print our newly accessed data and tokens to the screen.
 
-<img src="../img/static/../../static/img/2023-12-21%2016_14_00-localhost_3000.png" alt="Visualised data" width=1000 height=350/>
+<img src="../img/static/../../static/img/localhost.png" alt="Visualised data" width=1000 height=350/>
 
 _Data is obscured due to privacy concerns_
 
