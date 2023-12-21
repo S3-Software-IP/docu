@@ -10,6 +10,7 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
   - [Relevant questions](#relevant-questions)
     - [When is an application 'user-friendly'?](#when-is-an-application-user-friendly)
     - [What does a 'full-stack web application' encompass?](#what-does-a-full-stack-web-application-encompass)
+      - [Fullstack applications](#fullstack-applications)
     - [What are Javascript frameworks?](#what-are-javascript-frameworks)
     - [When should one use a Javascript framework?](#when-should-one-use-a-javascript-framework)
     - [What is an ORM?](#what-is-an-orm)
@@ -17,6 +18,8 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
     - [Why did we choose Next.js as our JavaScript framework?](#why-did-we-choose-nextjs-as-our-javascript-framework)
 
 ## Description
+
+<img src=https://www.capthronetechnologies.com/assets/images/web-application-development.png alt="Header image by 'Capthrone Technologies Inspiring Minds'" width=500 height=500>
 
 ### Learning outcome
 
@@ -48,9 +51,22 @@ An application is considered 'user-friendly' when it is simple for users to unde
 A 'full-stack web application' should encompass all aspects of an application. The entire depth of a computer system application should be covered. In todays terms this essentially boils down to
 
 - A frontend
-- A backend (usually split into)
+- A backend (sometimes split into)
   - API (for logic)
-  - Databasse (for data)
+  - Database (for data)
+
+#### Fullstack applications
+
+Some implementation examples of fullstack projects for both the individual and group projects
+
+- ['TeamFinder' - Group project](https://github.com/S3-IO-Dev/S3_DB_IO)
+
+  - [Mobile application front-end (React Native)](https://github.com/S3-IO-Dev/S3-DB-IO-Front-end#s3_db_io)
+  - [Web API (ASP.NET Web API using EF)](https://github.com/S3-IO-Dev/S3_DB_IO#project-name)
+
+- ["SpottedCharts" - Individual project](https://github.com/S3-Software-IP/monorepo)
+  - [User front-end (ReactJS)](https://github.com/S3-Software-IP/monorepo/tree/main/frontend)
+  - [Spotify Snapshot API (ASP.NET Web API using EF)](https://github.com/S3-Software-IP/monorepo/tree/main/backend)
 
 ### What are Javascript frameworks?
 
