@@ -10,6 +10,8 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
   - [Relevant questions](#relevant-questions)
     - [What are the different type of tests?](#what-are-the-different-type-of-tests)
       - [Unit](#unit)
+        - [Individual project](#individual-project)
+        - [Group project](#group-project)
       - [Integration](#integration)
       - [System](#system)
       - [Acceptance](#acceptance)
@@ -18,6 +20,8 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
     - [When is something considered of 'high' quality?](#when-is-something-considered-of-high-quality)
 
 ## Description
+
+<img src=https://www.capthronetechnologies.com/assets/images/web-application-development.png alt="Header image by 'The Silicon Partners'" width=750 height=750>
 
 ### Learning outcome
 
@@ -57,6 +61,14 @@ A unit test is made to test a component at code level. Each 'block' of code is t
 
 Using this example there are clear rules and expectations regarding the function. They are concise, clear and direct and able to be tested. These test nowadays are automated and ran every time you make a change to the code-base.
 
+##### Individual project
+
+In the individual project we have made unit tests mostly targeted towards the backend, as the frontend is able to handle most null, error or invalid values. Our .NET backend is testing in [xUnit](https://xunit.net/). Here we also implement the [AutoFixture](https://github.com/AutoFixture/AutoFixture) library to generate fake data for our unit tests. Next to those two we also use [Moq](https://github.com/devlooped/moq) which can provide LINQ when mocking services, interfaces & other items.
+
+##### Group project
+
+Within the group project, unit testing is of high importance considering the requirements. Vulnerabilities should be well-covered or discovered during testing considering the data that is transferred using the applications. The unit tests we have written for the backend are automatically executed upon creating a pull request to 'main'. See [CI/CD](4-ci-cd.md) for more information on this.
+
 #### Integration
 
 Integration testing is a level higher than unit testing, it is in regard to testing whether a system or subsystem as a whole is working as expected. It helps identify bugs and issues before they are implemented into other (sub-)modules. Integration testing can be automated.
@@ -84,3 +96,7 @@ Code reviews, also known as peer reviews, is a concept in which another person c
 Static code analysis is able to find 'code-smells' (a problem in code that might indicate a deeper problem). It attempts to analyze weaknesses in source code which might cause problems/vulnerabilities. It can also apply code rules for things such as classes, functions, objects and how you decide to use them.
 
 ### When is something considered of 'high' quality?
+
+'Something' or in this case 'code', is considered high quality when it passes certain, beforehand agreed upon, metrics. Data such as the total percentage of code covered by tests, if there are no security flaws. Essentially it is impossible to create a single metric or a line where something is 'high' quality.
+
+For this reason the company, group, community or team you work with/in create thresholds. If testing is not important for a certain project, the 'test coverage' metric would be lower, thus it'd be a lot easier to consider the project of 'high' quality as the boundary for said term is low.
