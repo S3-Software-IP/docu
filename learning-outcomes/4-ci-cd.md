@@ -29,7 +29,44 @@ _Design and implement:_ You design a release process and implement a continuous 
 
 ## Implementation
 
+We have implemented CI/CD using github actions and docker. I setup dockerfiles for our frontend that runs on NexJs, and for our backend that runs on dot net. A compose file is used to run everything in 1 container and where the DB is setup. So u can easily run the whole application just by running that compose file. for more info about [Docker](https://docs.docker.com/docker-hub/quickstart/)
+
+Next up was automation. We used github action and sonar cloud to setup up a code check/security check. for more detailed [explanation](#sonarcloud)
+
+And after that we added 2 more workflows for pushing the frontend and backend to dockerhub. for a more detailed explaination about those 2 workflows. We refer to [here](#what-are-the-key-components-involved-in-a-cicd-pipeline-and-how-do-they-work-together)
+
 ## Relevant questions
+
+<details>
+<summary>What is CI/CD?</summary>
+<br>
+CI/CD stands for Continuous Integration and Continuous Deployment. It's a set of practices that automate the building, testing, and deployment of software changes, ensuring a more efficient and reliable development process.
+<br><br>
+</details>
+<details>
+<summary>Why is CI/CD important?</summary>
+<br>
+CI/CD improves development speed, reliability, and collaboration by automating repetitive tasks. It catches bugs early, enhances code quality, and allows for faster and more frequent releases.
+<br><br>
+</details>
+<details>
+<summary>How does CI differ from CD?</summary>
+<br>
+Continuous Integration (CI) focuses on automating code integration and testing. Continuous Deployment (CD) extends CI by automating the release and deployment of code changes to production environments.
+<br><br>
+</details>
+<details>
+<summary>What is a CI/CD pipeline?</summary>
+<br>
+A CI/CD pipeline is a series of automated steps that code changes go through, including building, testing, and deploying. It ensures a systematic and repeatable process for delivering software.
+<br><br>
+</details>
+<details>
+<summary>Which tools are commonly used for CI/CD?</summary>
+<br>
+Popular CI/CD tools include Jenkins, GitLab CI/CD, Travis CI, and GitHub Actions. These tools integrate with version control systems and automate various stages of the software development lifecycle.
+<br><br>
+</details>
 
 ### What is the primary purpose of CI/CD in software development?
 
@@ -45,23 +82,87 @@ Tools like Github Actions allows developers to automatically run tests, deployme
 
 Understanding the essence of a CI/CD pipeline involves dissecting its key components and comprehending how they collaborate. Consider the pipeline stages - from code integration to deployment. Each phase, including testing, building, and Docker image creation, plays a pivotal role. For instance, tools like Github Actions automate testing and deployments based on specified parameters. Docker acts as the release system, streamlining development by circumventing compatibility issues across different environments. This orchestration ensures a cohesive and reliable release process. Can you identify specific stages that resonate with your experience or that you find particularly significant?
 
-Understanding the essence of a CI/CD pipeline involves dissecting its key components and comprehending how they collaborate. In the context of the individual project, Github Actions are being used at the time of writing, as the code is stored on Github. Currently there are 2 'work-flows', an automated set of steps to complete a task often to achieve a goal. These workflows are as such:
+Understanding the essence of a CI/CD pipeline involves dissecting its key components and comprehending how they collaborate. In the context of the individual project, Github Actions are being used at the time of writing, as the code is stored on Github. Currently there are 3 'work-flows', an automated set of steps to complete a task often to achieve a goal. These workflows are as such:
 
-- Build
-- Push frontend to Dockerhub
+- [DockerHub Build and Push Frontend](#dockerhub-build-and-push-Frontend)
+- [DockerHub Build and Push Backend](#dockerhub-build-and-push-backend)
+- [Sonarcloud](#sonarcloud)
 
-#### Build
+### DockerHub Build and Push Frontend
 
-The 'build' workflow will, upon pushing the main branch, not only build the suggested change for the 'main' branch, but also run some analyses using SonarCloud. This involves a static code analysis, revealing security issues, 'code smells' (improvements to readability/maintainability) & will reveal a code coverage metric.
-
-The results of the Sonarcloud analysis is shown within the pull request it is started from, next to that you can also review the results from both individual requests and the total project [here](https://sonarcloud.io/organizations/s3-software-ip/projects).
+The 'DockerHub Build and Push Frontend' workflow will, upon pushing the main branch, check out the code, log into DockerHub, build and then push the newly created image to DockerHub.
 
 <details>
-<summary> The 'build' pipeline</summary>
+<summary>The 'DockerHub Build and Push Frontend' pipeline</summary>
 <br>
 
 ```yaml
-name: Build
+name: DockerHub Build and Push Frontend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build project
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Run Jest tests
+        run: |
+          cd frontend
+          npm test
+
+      - name: Build Docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/spottedcharts:latest -f frontend/Dockerfile frontend
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Push Docker image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/spottedcharts:latest
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: frontend/.next
+```
+
+</details>
+
+### DockerHub Build and Push Backend
+
+The 'DockerHub Build and Push Backend' workflow will, upon pushing the main branch. it will build the backend using the dockerfile provided. After it has succcesfully build the image will be pushed to dockerhub where it can be accessed.
+
+<details>
+<summary>implementation 'DockerHub Build and Push Backend'</summary>
+<br>
+
+```yaml
+name: SonarCloud Scan
 on:
   push:
     branches:
@@ -75,58 +176,47 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 ```
 
 </details>
 
-### Push frontend to Dockerhub
+### Sonarcloud
 
-The 'push frontend to Dockerhub' workflow will, upon pushing the main branch, check out the code, log into DockerHub, build and then push the newly created image to DockerHub.
+The 'Sonarcloud' workflow will, upon pushing the main branch, not only build the suggested change for the 'main' branch, but also run some analyses using SonarCloud. This involves a static code analysis, revealing security issues, 'code smells' (improvements to readability/maintainability) & will reveal a code coverage metric.
+
+The results of the Sonarcloud analysis is shown within the pull request it is started from, next to that you can also review the results from both individual requests and the total project [here](https://sonarcloud.io/organizations/s3-software-ip/projects).
 
 <details>
-<summary>The 'push frontend to Dockerhub' pipeline</summary>
+<summary>implementation 'Sonarcloud'</summary>
 <br>
 
 ```yaml
-name: Push Frontend to Dockerhub
-
+name: SonarCloud Scan
 on:
   push:
-    branches: ["main"]
-
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
-  push_frontend:
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
+      - uses: actions/checkout@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta_frontend
-        uses: docker/metadata-action@v5
-        with:
-          images: theartcher/spottedcharts-frontend
-
-      - name: Build and push Docker image for frontend
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./frontend/Dockerfile
-          push: true
-          tags: ${{ steps.meta_frontend.outputs.tags }}
-          labels: ${{ steps.meta_frontend.outputs.labels }}""
+          fetch-depth: 0
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 ```
 
 </details>
