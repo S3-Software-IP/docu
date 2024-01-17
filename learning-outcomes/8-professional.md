@@ -24,8 +24,14 @@ _Professional manner:_
 - You are able to track your work progress and communicate your progress with the team.
 - You actively ask and apply feedback from stakeholders and advise them on the most optimal technical and design (architectural) solutions.
 - You choose and substantiate solutions for a given problem.
+  
+  <p align="center">
+    <img src="https://memp.pratt.duke.edu/sites/memp.pratt.duke.edu/files/u18/Five-Principles-DukeMEMP-800px.png" alt="Header image by 'Capthrone Technologies Inspiring Minds'" width=800 height=400>
+</p>
 
 ## Implementation
+
+We started this semester thinking we were already very professional, but soon found out this wasn't really the case. We were pretty organized inside our project group from the start. So we made some agreements and setup some tooling like a groupsapp for more practical stuff and discord for content-related stuff. and this worked great for the first couple of weeks until we kind of forgot invite our teachers to the teams appointment. So that wasn't very professional
 
 ## Relevant stories
 
