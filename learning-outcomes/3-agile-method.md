@@ -84,12 +84,12 @@ We didn't exactly choose. We where expected from Fontys to use Scrum. Probably w
 
 ### Jira
 
-[Jira](https://www.atlassian.com/software/jira/guides/getting-started/introduction#what-is-jira-software) supports any agile project management methodology for software development that your team might need. From agile planning to fully customizable Scrum boards, Jira gives you the tools you need to estimate, report and measure velocity with workflows designed to fit your frameworks.projects.
+Jira[^1] supports any agile project management methodology for software development that your team might need. From agile planning to fully customizable Scrum boards, Jira gives you the tools you need to estimate, report and measure velocity with workflows designed to fit your frameworks.projects.
 
 We used Jira this semester and can recommend it to anyone. for more info on Jira software click [here](https://www.atlassian.com/software/jira/guides/getting-started/introduction#what-is-jira-software)
 
 <p align="center">
-    <img src="/static/img/jira-board.png" alt="Header image by 'Capthrone Technologies Inspiring Minds'" width=800 height=500>
+    <img src="../static/img/jira-board.png" alt="Header image by 'Capthrone Technologies Inspiring Minds'">
 </p>
 
 ### Sprints
@@ -113,3 +113,5 @@ Definition of Done (DoD) in Scrum is a set of criteria or standards that must be
 <p align="center">
     <img src="https://cdn-images-1.medium.com/max/1000/1*INeYhTOHS6lk_7HLN0aJdw.png" alt="Header image by 'Capthrone Technologies Inspiring Minds'" width=600 height=500>
 </p>
+
+[^1]: https://www.atlassian.com/software/jira/guides/getting-started/introduction#what-is-jira-software
