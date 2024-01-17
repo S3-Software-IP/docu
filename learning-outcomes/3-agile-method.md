@@ -13,13 +13,14 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
     - [What method did we choose and why?](#what-method-did-we-choose-and-why)
     - [Jira](#jira)
     - [Sprints](#sprints)
-    - [Story points and Velosity](#story-points-and-velosity)
+    - [Story points and velocity](#story-points-and-velocity)
     - [Sprint reviews and Refinement sessions](#sprint-reviews-and-refinement-sessions)
     - [Definition of Done](#definition-of-done)
 
 ## Description
 
 Agile methods are a set of iterative and incremental approaches to software development that prioritize flexibility, collaboration, and customer satisfaction. They emphasize adaptability to changing requirements and continuous delivery of valuable software.
+
 <p align="center">
     <img src="https://www.nimblework.com/wp-content/uploads/2022/12/scrum-methodology.webp" alt="Header image by 'Capthrone Technologies Inspiring Minds'" width=800 height=500>
 </p>
@@ -34,23 +35,26 @@ _Choose:_ You are aware of the most popular agile methods and their underlying a
 
 ## Implementation
 
-During our semester working using a agile method in our case [Scrum](#what-are-popular-agile-methods), brought about some challenges with them. Like needing to use tools like [Jira](#jira) and adapting to three-week [sprints](#sprints). However, with each iteration, our team became more proficient in utilizing these tools and embracing agile principles. Regular reveiws stakeholder and teacher provided some valuable insights in how to improve as a team and where to focus on in our next sprint. After every sprint we also did a [sprint-review](#sprint-reviews). To see what went well and what needed improvement, promoting a "culture" of continuous improvement. We had some trouble with determining our [Definition of Done](#definition-of-done). So we didn't really understand how to go about it but with some help from our teachers we got a better understating on how to define it.
+During our semester working using a agile method in our case [Scrum](#what-are-popular-agile-methods), brought about some challenges with them. Like needing to use tools like [Jira](#jira) and adapting to three-week [sprints](#sprints). However, with each iteration, our team became more proficient in utilizing these tools and embracing agile principles. Regular reviews stakeholder and teacher provided some valuable insights in how to improve as a team and where to focus on in our next sprint. After every sprint we also did a [sprint-review](#sprint-reviews). To see what went well and what needed improvement, promoting a "culture" of continuous improvement. We had some trouble with determining our [Definition of Done](#definition-of-done). So we didn't really understand how to go about it but with some help from our teachers we got a better understating on how to define it.
 
-As we progressed through sprints, our understanding of Scrum grew, especially in the last sprint, where we efficiently managed the project with just one story point remaining. This proved we had grown as a team and found our teams [velosity](#story-points-and-velosity). Moving forward, we are well-equipped to apply Scrum more efficiently, implementing its principles for future projects. We just started working and Scrum and are not (jet) master of Scrum but have certainly come a long way. So in futher projects we will grow even more in using Scrum using this semesters base for working agile.
+As we progressed through sprints, our understanding of Scrum grew, especially in the last sprint, where we efficiently managed the project with just one story point remaining. This proved we had grown as a team and found our teams [velosity](#story-points-and-velosity). Moving forward, we are well-equipped to apply Scrum more efficiently, implementing its principles for future projects. We just started working and Scrum and are not (jet) master of Scrum but have certainly come a long way. So in further projects we will grow even more in using Scrum using this semesters base for working agile.
 
 ## Relevant questions
 
 ### What are popular agile methods?
 
 1. **Scrum:**
-   - **Description:** Scrum is an iterative and incremental agile framework that focuses on delivering a potentially shippable product at the end of each iteration called a sprint, a sprint can be a piriod from a week to 4 weeks. It emphasizes collaboration, accountability, and continuous improvement. This is the one we used during our semester
+
+   - **Description:** Scrum is an iterative and incremental agile framework that focuses on delivering a potentially shippable product at the end of each iteration called a sprint, a sprint can be a period from a week to 4 weeks. It emphasizes collaboration, accountability, and continuous improvement. This is the one we used during our semester
    - **Key Components:** Product Backlog, Sprint Planning, Daily Stand-ups, Sprint Review, Sprint Retrospective.
 
 2. **Kanban:**
+
    - **Description:** Kanban is a visual management method for software development that helps teams balance work-in-progress and optimize the flow of work. It is based on the principles of transparency, balance, and continuous delivery.
    - **Key Concepts:** Visual Board, Work-in-Progress Limits, Pull System.
 
 3. **Extreme Programming (XP):**
+
    - **Description:** XP is an agile software development framework that aims to produce higher-quality software through frequent releases in short development cycles. It emphasizes practices such as pair programming, continuous integration, and test-driven development.
    - **Key Practices:** Pair Programming, Continuous Integration, Test-Driven Development.
 
@@ -76,7 +80,7 @@ In our agile journey, we used to several key principles that had influence on ou
 
 ### What method did we choose and why?
 
-We didn't exacly choose. We where expected from Fontys to use Scrum. Probably we asked to use another agile method then Scrum we could. but we never really questioned it so we just used Scrum.
+We didn't exactly choose. We where expected from Fontys to use Scrum. Probably we asked to use another agile method then Scrum we could. but we never really questioned it so we just used Scrum.
 
 ### Jira
 
@@ -92,7 +96,7 @@ We used Jira this semester and can recommend it to anyone. for more info on Jira
 
 In Scrum, a sprint is a time-boxed iteration, typically lasting two to four weeks, during which a cross-functional team works on a set of defined tasks and delivers a potentially shippable product increment. Sprints provide a structured framework for iterative development and allow teams to regularly review and adapt their work based on feedback.
 
-### Story points and Velosity
+### Story points and velocity
 
 In Scrum, story points are a relative measure of effort or complexity assigned to user stories during estimation. Velocity is the average amount of work a team can complete in a sprint based on the sum of story points. It helps teams forecast how much work they can handle in future sprints.
 
