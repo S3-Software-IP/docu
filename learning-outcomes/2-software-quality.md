@@ -23,7 +23,7 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
 ## Description
 
 <p align="center">
-  <img src=https://www.capthronetechnologies.com/assets/images/web-application-development.png alt="Header image by 'The Silicon Partners'" width=750 height=750>
+  <img src=https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/08/levels-of-testing-768x499.png alt="Header image by 'Anamika Kalwan'" width=750 height=500>
 </p>
 
 ### Learning outcome
