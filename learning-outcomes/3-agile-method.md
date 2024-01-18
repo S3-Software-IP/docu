@@ -84,9 +84,9 @@ We didn't exactly choose. We where expected from Fontys to use Scrum. Probably w
 
 ### Jira
 
-Jira[^1] supports any agile project management methodology for software development that your team might need. From agile planning to fully customizable Scrum boards, Jira gives you the tools you need to estimate, report and measure velocity with workflows designed to fit your frameworks.projects.
+Jira supports any agile project management methodology for software development that your team might need.[^1] From agile planning to fully customizable Scrum boards, Jira gives you the tools you need to estimate, report and measure velocity with workflows designed to fit your frameworks.projects.
 
-We used Jira this semester and can recommend it to anyone. for more info on Jira software click [here](https://www.atlassian.com/software/jira/guides/getting-started/introduction#what-is-jira-software)
+We used Jira this semester and can recommend it to anyone. for more info on Jira software click [here](https://www.atlassian.com/software/jira/guides/getting-started/introduction#what-is-jira-software).
 
 <p align="center">
     <img src="../static/img/jira-board.png" alt="Header image by 'Capthrone Technologies Inspiring Minds'">

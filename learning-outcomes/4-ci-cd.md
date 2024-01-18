@@ -8,16 +8,20 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
   - [Clarification](#clarification)
   - [Implementation](#implementation)
   - [Relevant questions](#relevant-questions)
+    - [Compact/short questions](#compactshort-questions)
     - [What is the primary purpose of CI/CD in software development?](#what-is-the-primary-purpose-of-cicd-in-software-development)
     - [How do tools like Github Actions and Docker enhance the automation of the software release process, and what specific roles do they play in ensuring a smooth deployment?](#how-do-tools-like-github-actions-and-docker-enhance-the-automation-of-the-software-release-process-and-what-specific-roles-do-they-play-in-ensuring-a-smooth-deployment)
     - [What are the key components involved in a CI/CD pipeline, and how do they work together?](#what-are-the-key-components-involved-in-a-cicd-pipeline-and-how-do-they-work-together)
-      - [Build](#build)
-    - [Push frontend to Dockerhub](#push-frontend-to-dockerhub)
+    - [DockerHub Build and Push Frontend](#dockerhub-build-and-push-frontend)
+    - [DockerHub Build and Push Backend](#dockerhub-build-and-push-backend)
+    - [Sonarcloud](#sonarcloud)
     - [How does a (semi)automated release process adapt to different project contexts?](#how-does-a-semiautomated-release-process-adapt-to-different-project-contexts)
 
 ## Description
 
-<img src=https://mlops-guide.github.io/MLOps/CICDML/ci-cd.png alt="Header image by 'MLOps Guide'" width=750 height=400>
+<p align="center">
+  <img src=https://mlops-guide.github.io/MLOps/CICDML/ci-cd.png alt="Header image by 'MLOps Guide'" width=750 height=400>
+</p>
 
 ### Learning outcome
 
@@ -29,13 +33,15 @@ _Design and implement:_ You design a release process and implement a continuous 
 
 ## Implementation
 
-We have implemented CI/CD using github actions and docker. I setup dockerfiles for our frontend that runs on NexJs, and for our backend that runs on dot net. A compose file is used to run everything in 1 container and where the DB is setup. So u can easily run the whole application just by running that compose file. for more info about [Docker](https://docs.docker.com/docker-hub/quickstart/)
+We have implemented CI/CD using github actions and docker. I setup dockerfiles for our frontend that runs on NexJs, and for our backend that runs on dot net. A compose file is used to run everything in 1 container and where the DB is setup. So you can easily run the whole application just by running that compose file, for more info about [Docker](https://docs.docker.com/docker-hub/quickstart/).
 
-Next up was automation. We used github action and sonar cloud to setup up a code check/security check. for more detailed [explanation](#sonarcloud)
+Next up was automation. We used github action and sonar cloud to setup up a code check/security check, for more detailed explanation see [sonarcloud](#sonarcloud).
 
-And after that we added 2 more workflows for pushing the frontend and backend to dockerhub. for a more detailed explaination about those 2 workflows. We refer to [here](#what-are-the-key-components-involved-in-a-cicd-pipeline-and-how-do-they-work-together)
+After that we added 2 more workflows, one for pushing the frontend- and one for pushing the backend to Dockerhub. for a more detailed explanation about those 2 workflows. We refer to [here](#what-are-the-key-components-involved-in-a-cicd-pipeline-and-how-do-they-work-together)
 
 ## Relevant questions
+
+### Compact/short questions
 
 <details>
 <summary>What is CI/CD?</summary>
@@ -67,6 +73,8 @@ A CI/CD pipeline is a series of automated steps that code changes go through, in
 Popular CI/CD tools include Jenkins, GitLab CI/CD, Travis CI, and GitHub Actions. These tools integrate with version control systems and automate various stages of the software development lifecycle.
 <br><br>
 </details>
+
+---
 
 ### What is the primary purpose of CI/CD in software development?
 
@@ -158,7 +166,7 @@ jobs:
 The 'DockerHub Build and Push Backend' workflow will, upon pushing the main branch. it will build the backend using the dockerfile provided. After it has succcesfully build the image will be pushed to dockerhub where it can be accessed.
 
 <details>
-<summary>implementation 'DockerHub Build and Push Backend'</summary>
+<summary>Implementation 'DockerHub Build and Push Backend'</summary>
 <br>
 
 ```yaml

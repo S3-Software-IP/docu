@@ -14,7 +14,9 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
 
 ## Description
 
-<img src=https://cdn.dribbble.com/users/729829/screenshots/3088470/galshir-pen-tool-creation.gif alt="Header gif by 'Clever Harvey'" width=500 height=500>
+<p align="center">
+  <img src=https://cdn.dribbble.com/users/729829/screenshots/3088470/galshir-pen-tool-creation.gif alt="Header gif by 'Clever Harvey'" width=500 height=500>
+</p>
 
 ### Learning outcome
 
@@ -28,9 +30,11 @@ _Multiple types of test techniques:_ You apply user acceptance testing and stake
 
 When developing an application it is of utmost importance to validate the concepts, ideas and designs to ensure that their eventual implementation is in accordance with the functional and non-functional requirements. These requirements are determined by the stakeholder which is then communicated to the team by the PO.
 
-In the odd case of the individual project both of us were all roles, PO, stakeholder and software engineers. This in turn meant we had to be strict to one another to ensure both the quality of the application and ensure we follow on our rule-set.
+In the odd case of the individual project both of us were all roles at the same time, PO, stakeholder, technical architects and software engineers. This in turn meant we had to be strict to one another to ensure both the quality of the application and ensure we follow on our rule-set.
 
 For both projects elaborate designs were created, in both the sense of architectural choices as well as aesthetics such as the TeamFinder mobile application.
+
+---
 
 Individual project
 
@@ -49,6 +53,8 @@ Group project
   - [Search colleague screen](../static/diagrams/gp/Application%20UI%20and%20UX/TF-app-search.jpg)
   - [Settings screen](../static/diagrams/gp/Application%20UI%20and%20UX/TF-app-setting.jpg)
 - [Architectural designs](../static/diagrams/gp/Data-transformations.drawio) _(Contains C4 model visualization, flow-charts for data handling etc.)_
+
+---
 
 To ensure we validate these designs we implement other's feedback: classmates, teachers, stakeholders and other developers comment on our functionality and/or design. This feedback is then used to improve said applications. The architectural and frontend designs in the group project were discussed with both POs, as they have field-experience which is valuable to improving and iterating on the designs before their final implementation.
 
@@ -84,7 +90,9 @@ _Table contents provided by GeeksForGeeks[^1]_
 
 User acceptance testing (UAT) is the final step in testing before a product/release is published. UAT is often performed by end-users, they are an effective group to test on as they understand the problems which a system is attempting to solve/improve. They will know the details and daily problems a user can encounter. This is also at times done by an internal group of appointed beta testers, this set-up is more common larger, enterprise solutions.[^2]
 
-![Overview release-testing diagram](../static/img/Release%20diagram.png)
+<p align="center">
+  <img src=../static/img/Release%20diagram.png alt="Overview release-testing diagram">
+</p>
 
 The core of UAT is to find (or confirm the lack of-) issues which have not been discovered by the previous means of testing. E.g requirements for a story not matching the intended behavior, bugs etc. Without UAT the, although thoroughly tested, software may work perfectly fine, yet not meet their actual requirements, the software can be released with bugs. This can then lead to frustrating behavior, unhappy customers and PO's, these issues can be costly and damaging to the reputation of the development team.
 

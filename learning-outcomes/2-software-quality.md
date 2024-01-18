@@ -7,6 +7,7 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
     - [Learning outcome](#learning-outcome)
     - [Clarification](#clarification)
   - [Implementation](#implementation)
+    - [Code snippets](#code-snippets)
   - [Relevant questions](#relevant-questions)
     - [What are the different type of tests?](#what-are-the-different-type-of-tests)
       - [Unit](#unit)
@@ -21,7 +22,9 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
 
 ## Description
 
-<img src=https://www.capthronetechnologies.com/assets/images/web-application-development.png alt="Header image by 'The Silicon Partners'" width=750 height=750>
+<p align="center">
+  <img src=https://www.capthronetechnologies.com/assets/images/web-application-development.png alt="Header image by 'The Silicon Partners'" width=750 height=750>
+</p>
 
 ### Learning outcome
 
@@ -43,6 +46,84 @@ Whether working alone or within the group project it is of great importance that
 - Code reviews
 
 Within our project we have currently have unit tests and are planning to develop a comprehensive integration test for the endpoints in regard to the API that is being developed for the backend.
+
+Within both projects unit testing, integration and frontend testing has been implemented to some extent.
+
+- ['TeamFinder' - Group project (Organization page)](https://github.com/S3-IO-Dev)
+
+  - [Unit](https://github.com/S3-IO-Dev/S3_DB_IO/blob/main/back-end/TeamFinderAPI/UnitTestsApi/LocationControllerTests.cs)
+  - [Integration](https://github.com/S3-IO-Dev/S3_DB_IO/blob/main/back-end/TeamFinderAPI/UnitTestsApi/Services/CiscoAPITest.cs)
+
+- ["SpottedCharts" - Individual project (Organization page)](https://github.com/S3-Software-IP)
+  - [Unit]()
+  - [Frontend]()
+
+These tests are executed automatically upon creating a pull request.
+
+---
+
+### Code snippets
+
+<details>
+<summary>Integration test to test a specific part of a service.</summary>
+<br>
+
+```cs
+      [Fact]
+        public void RemoveOutdatedData_KeepNew()
+        {
+            var solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(solutionDirectory)
+                .AddJsonFile("TeamFinderAPI/appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddSingleton<IConfiguration>(configuration);
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+
+
+            var ciscoApiService = new CiscoAPIService(configuration, serviceProvider);
+            ciscoApiService.StartAsync(default).Wait();
+
+
+            List<CiscoDevice> networkClients = new List<CiscoDevice>();
+            CiscoDevice shouldExist = new CiscoDevice("allowed", "email1@example.com", DateTime.Parse("2023-07-18T08:35:34Z"), DateTime.Now, "01", DeviceStatus.Online);
+            networkClients.Add(shouldExist);
+
+
+            List<CiscoDevice> strippedClients = ciscoApiService.StripOutdatedData(networkClients);
+            Assert.Contains(shouldExist, strippedClients);
+        }
+```
+
+</details>
+
+<details>
+<summary>Unit test for an API backend.</summary>
+<br>
+
+```cs
+      [Fact]
+        public void CreateLocation_WithInvalidColleagueLocation_ReturnsBadRequestResult()
+        {
+            // Arrange
+            var mockLocationService = new Mock<ILocationService>();
+            mockLocationService.Setup(service => service.CreateNew(It.IsAny<ColleagueLocation>())).Returns(true);
+            var controller = new LocationController(mockLocationService.Object);
+
+            // Act
+            var result = controller.CreateLocation(null) as ObjectResult;
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(400, result.StatusCode);
+            Assert.Equal("The provided location is invalid.", result.Value);
+        }
+
+```
+
+</details>
 
 ## Relevant questions
 
@@ -87,7 +168,7 @@ Code reviews, also known as peer reviews, is a concept in which another person c
 
 ### What is a 'static code analysis'?
 
-[Perforce](https://www.perforce.com/) says the following about [static code analysis](https://www.perforce.com/blog/sca/what-static-analysis)
+[Perforce](https://www.perforce.com/) says the following about static code analysis:[^1]
 
 > "Static analysis is a method of debugging that is done by automatically examining the source code without having to execute the program. This provides developers with an understanding of their code base and helps ensure that it is compliant, safe, and secure.
 >
@@ -100,3 +181,5 @@ Static code analysis is able to find 'code-smells' (a problem in code that might
 'Something' or in this case 'code', is considered high quality when it passes certain, beforehand agreed upon, metrics. Data such as the total percentage of code covered by tests, if there are no security flaws. Essentially it is impossible to create a single metric or a line where something is 'high' quality.
 
 For this reason the company, group, community or team you work with/in create thresholds. If testing is not important for a certain project, the 'test coverage' metric would be lower, thus it'd be a lot easier to consider the project of 'high' quality as the boundary for said term is low.
+
+[^1]: https://www.perforce.com/blog/sca/what-static-analysis

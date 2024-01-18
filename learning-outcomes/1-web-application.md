@@ -19,7 +19,9 @@ _Take me back to the [home](../README.md#learning-outcomes) page!_
 
 ## Description
 
-<img src=https://www.capthronetechnologies.com/assets/images/web-application-development.png alt="Header image by 'Capthrone Technologies Inspiring Minds'" width=500 height=500>
+<p align="center">
+  <img src=https://www.capthronetechnologies.com/assets/images/web-application-development.png alt="Header image by 'Capthrone Technologies Inspiring Minds'" width=500 height=500>
+</p>
 
 ### Learning outcome
 
@@ -59,22 +61,22 @@ A 'full-stack web application' should encompass all aspects of an application. T
 
 Some implementation examples of fullstack projects for both the individual and group projects
 
-- ['TeamFinder' - Group project](https://github.com/S3-IO-Dev/S3_DB_IO)
+- ['TeamFinder' - Group project (Organization page)](https://github.com/S3-IO-Dev)
 
   - [Mobile application front-end (React Native)](https://github.com/S3-IO-Dev/S3-DB-IO-Front-end#s3_db_io)
   - [Web API (ASP.NET Web API using EF)](https://github.com/S3-IO-Dev/S3_DB_IO#project-name)
 
-- ["SpottedCharts" - Individual project](https://github.com/S3-Software-IP/monorepo)
+- ["SpottedCharts" - Individual project (Organization page)](https://github.com/S3-Software-IP)
   - [User front-end (ReactJS)](https://github.com/S3-Software-IP/monorepo/tree/main/frontend)
   - [Spotify Snapshot API (ASP.NET Web API using EF)](https://github.com/S3-Software-IP/monorepo/tree/main/backend)
 
 ### What are Javascript frameworks?
 
-A [Javascript framework](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks) is essentially a pre-built extension of the [Javascript language](https://developer.mozilla.org/en-US/docs/Web/JavaScript) whose goal it is to simplify web-development. They provide a set of tools to assist in 'rudimentary' tasks, handling data, navigation between pages, user interfacing etc.
+A Javascript framework is essentially a pre-built extension of the [Javascript language](https://developer.mozilla.org/en-US/docs/Web/JavaScript) whose goal it is to simplify web-development.[^1] They provide a set of tools to assist in 'rudimentary' tasks, handling data, navigation between pages, user interfacing etc.
 
 ### When should one use a Javascript framework?
 
-In todays ICT ecosystem there are very few reasons as NOT to use a javascript framework. When building complex applications more robust frameworks such as React, Angular & Ember. If you're just making a small application as POC or for a personal project one might be more inclined to use a minimalist framework such as Alpine.js, Sling.js or Next.js.
+In todays ICT ecosystem there are very few reasons as NOT to use a javascript framework. When building complex applications more robust frameworks such as React, Angular & Ember. If you're just making a small application as proof of concept or for a personal project one might be more inclined to use a minimalist framework such as Alpine.js, Sling.js or Next.js.
 
 ### What is an ORM?
 
@@ -82,7 +84,7 @@ An ORM (Object-Relational Mapping) is a technique in which data within the datab
 
 ### What is asynchronous communication and what issues can arise from it?
 
-As quoted by [MDN](https://developer.mozilla.org/) regarding [asynchronous communication](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+As said by [MDN](https://developer.mozilla.org/): [^2]
 
 > "Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result."
 
@@ -102,3 +104,6 @@ As quoted by [MDN](https://developer.mozilla.org/) regarding [asynchronous commu
 
 These reasons make React with Next.js the ideal choice for crafting our frontend
 application.
+
+[^1]: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks
+[^2]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
